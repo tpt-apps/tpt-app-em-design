@@ -30,4 +30,6 @@ pub mod antenna;
 #[cfg(feature = "pro")]
 pub mod field;
 
-pub use trace::{MicrostripInput, StriplineInput, TraceInput, TraceResult};
+pub use trace::{
+    copper_thickness, solve, MicrostripInput, StriplineInput, TraceInput, TraceResult,
+};

@@ -68,6 +68,8 @@ pub enum AntennaInput {
 /// Dimensioned antenna with the readouts the UI shows.
 #[derive(Debug, Clone)]
 pub struct AntennaResult {
+    /// Which antenna this result describes.
+    pub kind: AntennaKind,
     /// Headline dimension: element length, mm.
     pub length_mm: f64,
     /// Patch width (patch only; 0 otherwise), mm.
@@ -190,6 +192,7 @@ fn design_wire(w: &WireAntennaInput) -> Result<AntennaResult, AntennaError> {
     ));
 
     Ok(AntennaResult {
+        kind: w.kind,
         length_mm,
         width_mm: 0.0,
         inset_mm: 0.0,
@@ -279,6 +282,7 @@ fn design_patch(p: &PatchInput) -> Result<AntennaResult, AntennaError> {
     );
 
     Ok(AntennaResult {
+        kind: AntennaKind::Patch,
         length_mm,
         width_mm,
         inset_mm,

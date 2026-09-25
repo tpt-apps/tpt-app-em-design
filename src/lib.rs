@@ -13,6 +13,11 @@
 // on other targets); the engine stays target-independent and host-testable.
 #[cfg(target_arch = "wasm32")]
 mod app;
+// Pro-edition panels (feature-gated like the engine's pro modules).
+#[cfg(all(target_arch = "wasm32", feature = "pro"))]
+mod antenna_panel;
+#[cfg(all(target_arch = "wasm32", feature = "pro"))]
+mod field_panel;
 #[cfg(all(target_arch = "wasm32", feature = "pro"))]
 mod projects;
 #[cfg(all(target_arch = "wasm32", feature = "pro"))]

@@ -24,8 +24,11 @@ that changes, update here too (and vice versa).
 
 ## File to upload
 
-Not built yet. Once packaged, this will be the Pro exe/zip produced by the
-app's `build.ps1 -Pro` (or equivalent) — see `todo.md`.
+`target\release\tpt-em-design-pro.exe` — produced by `./build.ps1 -Pro`.
+The exe is genuinely standalone: the web bundle is embedded at compile time
+and extracted to the OS temp dir on first launch, so there is no separate
+`dist/` folder to ship or lose. Smoke-tested: launches, extracts its bundle,
+and renders in WebView2.
 
 ## Product name
 
@@ -85,8 +88,10 @@ preinstalled on both — nothing extra to download.
 
 ## Cover image / thumbnail
 
-Not created yet. A screenshot of the 2D field visualization on a real antenna
-design is the most convincing cover once built. No stock/AI art.
+Recommended once listing: a screenshot of the 2D field viewer on a solved
+microstrip cross-section (potential heatmap + equipotential lines), or the
+radiation-pattern polar plot beside the trace result. Both render in the Pro
+build; no stock/AI art.
 
 ## After publishing
 
