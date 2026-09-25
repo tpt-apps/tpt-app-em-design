@@ -1,0 +1,19 @@
+[package]
+name = "tpt-em-design-engine"
+version = "0.1.0"
+edition = "2021"
+description = "Analysis core of TPT EM Design: closed-form trace impedance (microstrip/stripline) and, behind the `pro` feature, antenna design (dipole/monopole/patch + matching) and a 2D quasi-static field solve. Pure Rust, no UI deps."
+publish = false
+
+[features]
+default = []
+# Pro edition capabilities: antenna design tools, 2D field visualization,
+# radiation patterns. Compiled out of the free WASM build to keep the
+# payload small.
+pro = []
+
+[lints.rust]
+unsafe_op_in_unsafe_fn = "warn"
+
+[lints.clippy]
+all = { level = "warn", priority = -1 }
